@@ -1,0 +1,19 @@
+name: Users App Deployment
+on:
+  push:
+    branches: main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get codes
+        uses: actions/checkout@v4
+      - name: install node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: npm ci
+      - name: deploy the app
+        run: |
+          echo "app deploying......"
