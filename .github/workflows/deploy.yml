@@ -16,6 +16,8 @@ jobs:
           node-version: 18
       - name: install dependencies
         run: npm install
+      - name: build the app
+        run: npm run build
       - name: deploy the app
         run: |
           echo "app deploying......"
