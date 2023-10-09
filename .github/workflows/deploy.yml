@@ -2,6 +2,8 @@ name: Users App Deployment
 on:
   push:
     branches: main
+env:
+  BACKEND_URL: ${{ secrets.BACKEND_URL }}
 jobs:
   deploy:
     runs-on: ubuntu-latest
